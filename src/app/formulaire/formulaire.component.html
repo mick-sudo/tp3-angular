@@ -1,11 +1,11 @@
-<p>formulaire works!</p>
-
 <ul *ngFor="let user of users">
-  <li>{{user.nom}}</li>
-  <li>{{user.prenom}}</li>
-  <li>{{user.email}}</li>
-  <li>{{user.entreprise}}</li>
-  <li>{{user.telephone}}</li>
+  <div class="card">
+    <li>{{user.nom}}</li>
+    <li>{{user.prenom}}</li>
+    <li>{{user.email}}</li>
+    <li>{{user.entreprise}}</li>
+    <li>{{user.telephone}}</li>
+  </div>
 </ul>
 
 <form [formGroup]="user" (ngSubmit)="onSubmit()">
