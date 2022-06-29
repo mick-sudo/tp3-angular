@@ -1,0 +1,28 @@
+<p>formulaire works!</p>
+
+<ul *ngFor="let user of users">
+  <li>{{user.nom}}</li>
+  <li>{{user.prenom}}</li>
+  <li>{{user.email}}</li>
+  <li>{{user.entreprise}}</li>
+  <li>{{user.telephone}}</li>
+</ul>
+
+<form [formGroup]="user" (ngSubmit)="onSubmit()">
+  <label for="nom">nom</label>
+  <input type="text" formControlName="nom">
+  <span *ngIf="form['nom'].invalid && submitted">non valide</span>
+  <label for="prenom">prenom</label>
+  <input type="text" formControlName="prenom">
+  <span *ngIf="form['prenom'].invalid && submitted">non valide</span>
+  <label for="email">email</label>
+  <input type="text" formControlName="email">
+  <span *ngIf="form['email'].invalid && submitted">non valide</span>
+  <label for="entreprise">entreprise</label>
+  <input type="text" formControlName="entreprise">
+  <span *ngIf="form['entreprise'].invalid && submitted">non valide</span>
+  <label for="telephone">telephone</label>
+  <input type="text" formControlName="telephone">
+  <span *ngIf="form['telephone'].invalid && submitted">non valide</span>
+  <button type="submit">Ajouter</button>
+</form>
